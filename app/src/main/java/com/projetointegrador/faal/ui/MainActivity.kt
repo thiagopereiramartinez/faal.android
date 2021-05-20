@@ -6,15 +6,56 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.Glide
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.projetointegrador.faal.R
+import com.projetointegrador.faal.databinding.ActivityMainBinding
+import com.projetointegrador.faal.databinding.HeaderNavigationViewBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        setSupportActionBar(binding.topAppBar)
+
+        setupUI()
+
+    }
+
+    private fun setupUI() = with(binding) {
+
+        val user = FirebaseAuth.getInstance().currentUser
+
+        topAppBar.setNavigationOnClickListener {
+            drawerLayout.open()
+        }
+
+        val header = navigationView.getHeaderView(0)
+
+        user?.photoUrl?.toString()?.let { url ->
+            Glide
+                .with(this@MainActivity)
+                .load(url)
+                .centerCrop()
+                .into(header.findViewById(R.id.ivProfile))
+        }
+
+        (header.findViewById(R.id.tvName) as? TextView)?.let {
+            it.text = user?.displayName
+        }
+
+        (header.findViewById(R.id.tvEmail) as? TextView)?.let {
+            it.text = user?.email
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
