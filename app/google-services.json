@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "805146270209",
+    "project_id": "projeto-integrador-faal",
+    "storage_bucket": "projeto-integrador-faal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805146270209:android:351db546c592b1b24fbe00",
+        "android_client_info": {
+          "package_name": "com.projetointegrador.faal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "805146270209-cbs6kd2dcuivhs0v72pis07d77ec0g5q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.projetointegrador.faal",
+            "certificate_hash": "e72a078ff90d12b2892fddb947095bca5a2aac8c"
+          }
+        },
+        {
+          "client_id": "805146270209-nuqpphp24buovh04eil79o5138e71qql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuB5Xrgg8e-9pHVEZLcVZyqbl3IZbO_Hc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "805146270209-nuqpphp24buovh04eil79o5138e71qql.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
