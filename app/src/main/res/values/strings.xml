@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FAAL</string>
+    <string name="facebook_app_id">530498241317636</string>
+    <string name="facebook_application_id">@string/facebook_app_id</string>
+    <string name="fb_login_protocol_scheme">fb530498241317636</string>
+    <string name="sair">Sair</string>
 </resources>
